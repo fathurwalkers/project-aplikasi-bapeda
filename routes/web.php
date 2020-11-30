@@ -20,7 +20,7 @@ Route::prefix('/home')->group(function () {
     Route::get('/data-cagar-budaya', 'HomeController@data_cagarbudaya')->name('home-data-cagar-budaya');
     Route::get('/data-luas-tanam-satu', 'HomeController@data_luastanamsatu')->name('home-data-luas-tanam-satu');
     Route::get('/data-luas-tanam-dua', 'HomeController@data_luastanamdua')->name('home-data-luas-tanam-dua');
-    Route::get('data-perdagangan', 'HomeController@data_perdagangan')->name('home-data-perdagangan');
+    Route::get('/data-perdagangan', 'HomeController@data_perdagangan')->name('home-data-perdagangan');
 
 
     // PRINT ROUTE 

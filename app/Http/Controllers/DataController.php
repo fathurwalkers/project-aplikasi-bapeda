@@ -609,9 +609,11 @@ class DataController extends Controller
 
     public function data_koperasi()
     {
+        $users = session('data_login');
         $datakoperasi = Datakoperasi::all();
         return view('admin.listdata.data-koperasi', [
-            'datakoperasi' => $datakoperasi
+            'datakoperasi' => $datakoperasi,
+            'users' => $users
         ]);
     }
 
@@ -658,12 +660,18 @@ class DataController extends Controller
     // DATA LUAS TANAM 
     public function input_luastanamsatu()
     {
-        return view('admin.data.input-data-luastanam');
+        $users = session('data_login');
+        return view('admin.data.input-data-luastanam', [
+            'users' => $users
+        ]);
     }
 
     public function input_luastanamdua()
     {
-        return view('admin.data.input-data-luastanam2');
+        $users = session('data_login');
+        return view('admin.data.input-data-luastanam2', [
+            'users' => $users
+        ]);
     }
 
     public function post_luastanamsatu(Request $request)
@@ -714,38 +722,47 @@ class DataController extends Controller
 
     public function index_luastanamsatu()
     {
+        $users = session('data_login');
         $luas_tanamsatu = Luastanamsatu::all();
         return view('admin.listdata.data-luas-tanam-satu', [
-            'luas_tanamsatu' => $luas_tanamsatu
+            'luas_tanamsatu' => $luas_tanamsatu,
+            'users' => $users
         ]);
     }
 
     public function index_luastanamdua()
     {
+        $users = session('data_login');
         $luas_tanamdua = Luastanamdua::all();
         return view('admin.listdata.data-luas-tanam-dua', [
-            'luas_tanamdua' => $luas_tanamdua
+            'luas_tanamdua' => $luas_tanamdua,
+            'users' => $users
         ]);
     }
 
     public function edit_luastanamsatu($idluastanam)
     {
+        $users = session('data_login');
         $luastanamsatu = Luastanamsatu::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-satu', [
-            'luastanamsatu' => $luastanamsatu
+            'luastanamsatu' => $luastanamsatu,
+            'users' => $users
         ]);
     }
 
     public function edit_luastanamdua($idluastanam)
     {
+        $users = session('data_login');
         $luastanamdua = Luastanamdua::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-dua', [
-            'luastanamdua' => $luastanamdua
+            'luastanamdua' => $luastanamdua, 
+            'users' => $users
         ]);
     }
 
     public function update_luastanamsatu(Request $request, $idluastanam)
     {
+        $users = session('data_login');
         $update_luastanam = Luastanamsatu::where('id', $idluastanam)->first()->update([
             'tahun' => $request->tahun,
             'kecamatan' => $request->kecamatan,
@@ -762,7 +779,7 @@ class DataController extends Controller
             'kacang_hijau' => $request->kacang_hijau,
             'updated_at' => now()
         ]);
-        return redirect()->route('data-luas-tanam-satu');
+        return redirect()->route('data-luas-tanam-satu',['users' => $users]);
     }
 
     public function update_luastanamdua(Request $request, $idluastanam)
@@ -826,9 +843,11 @@ class DataController extends Controller
 
     public function index_perdagangan()
     {
+        $users = session('data_login');
         $data_perdagangan = Dataperdagangan::all();
         return view('admin.listdata.data-perdagangan', [
-            'data_perdagangan' => $data_perdagangan
+            'data_perdagangan' => $data_perdagangan,
+            'users' => $users
         ]);
     }
 

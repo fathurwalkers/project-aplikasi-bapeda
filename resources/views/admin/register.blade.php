@@ -53,6 +53,7 @@
                                                     <option value="dinas_pertanian">Dinas Pertanian</option>
                                                     <option value="dinas_kebudayaan">Dinas Kebudayaan</option>
                                                     <option value="dinas_pariwisata">Dinas Pariwisata</option>
+                                                    <option value="dinas_perdagangan">Dinas Perdagangan</option>
                                                     <option value="dinas_koperasi">Dinas Koperasi</option>
                                                     <option value="dinas_pemberdayaanmasyarakat">Dinas Pemberdayaan Masyarakat</option>
                                                   </select>

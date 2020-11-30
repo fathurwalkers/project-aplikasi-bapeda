@@ -113,6 +113,10 @@
                                     <a class="nav-link" href="{{ route('data-koperasi') }}">Data Koperasi</a>
                                     @endif
 
+                                    @if ($users->level == 'dinas_perdagangan')
+                                    <a class="nav-link" href="{{ route('data-perdagangan') }}">Data Perdagangan</a>
+                                    @endif
+
                                 </nav>
                             </div>
 
@@ -165,6 +169,10 @@
 
                                     @if ($users->level == 'dinas_koperasi')
                                     <a class="nav-link" href="{{ route('input-data-koperasi') }}">Data Koperasi</a>
+                                    @endif
+
+                                    @if ($users->level == 'dinas_perdagangan')
+                                    <a class="nav-link" href="{{ route('input-data-perdagangan') }}">Data Perdagangan</a>
                                     @endif
                         
                                 </nav>

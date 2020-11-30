@@ -21,6 +21,7 @@ use App\Dataproduksiperkebunan;
 use App\Luastanamdua;
 use App\Luastanamsatu;
 use App\Datacagarbudaya;
+use App\Dataperdagangan;
 
 class AdminController extends Controller
 {
@@ -44,6 +45,7 @@ class AdminController extends Controller
         $data_luastanamsatu = Luastanamsatu::all()->count();
         $data_luastanamdua = Luastanamdua::all()->count();
         $data_cagarbudaya = Datacagarbudaya::all()->count();
+        $data_perdagangan = Dataperdagangan::all()->count();
 
         $users = session('data_login');
         return view('admin.index', [
@@ -62,8 +64,8 @@ class AdminController extends Controller
             'data_koperasi' => $data_koperasi,
             'data_luastanamsatu' => $data_luastanamsatu,
             'data_luastanamdua' => $data_luastanamdua,
-            'data_cagarbudaya' => $data_cagarbudaya
-
+            'data_cagarbudaya' => $data_cagarbudaya,
+            'data_perdagangan' => $data_perdagangan
         ]);
     }
 
@@ -87,6 +89,7 @@ class AdminController extends Controller
         $data_luastanamsatu = Luastanamsatu::all()->count();
         $data_luastanamdua = Luastanamdua::all()->count();
         $data_cagarbudaya = Datacagarbudaya::all()->count();
+        $data_perdagangan = Dataperdagangan::all()->count();
 
         $users = session('data_login_admin');
         return view('admin.admin', [
@@ -105,7 +108,8 @@ class AdminController extends Controller
             'data_koperasi' => $data_koperasi,
             'data_luastanamsatu' => $data_luastanamsatu,
             'data_luastanamdua' => $data_luastanamdua,
-            'data_cagarbudaya' => $data_cagarbudaya
+            'data_cagarbudaya' => $data_cagarbudaya,
+            'data_perdagangan' => $data_perdagangan
         ]);
     }
 
@@ -166,6 +170,11 @@ class AdminController extends Controller
                         // dd($users);
                         break;
                     case "dinas_pendidikan":
+                        $users = session(['data_login' => $data_login]);
+                        return redirect('/admin');
+                        // dd($users);
+                        break;
+                    case "dinas_perdagangan":
                         $users = session(['data_login' => $data_login]);
                         return redirect('/admin');
                         // dd($users);
