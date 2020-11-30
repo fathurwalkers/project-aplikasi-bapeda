@@ -36,7 +36,8 @@ class DataController extends Controller
         return view('admin.listdata.data-fasilitas-kesehatan-filter', [
             'namakecamatan' => $namakecamatan,
             'data_fasilitas_kesehatan' => $data_fasilitas_kesehatan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -46,7 +47,8 @@ class DataController extends Controller
         $fasilitaskesehatan = Datafasilitaskesehatan::all();
         return view('admin.listdata.data-fasilitas-kesehatan', [
             'fasilitaskesehatan' => $fasilitaskesehatan, 
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -64,7 +66,8 @@ class DataController extends Controller
         return view('admin.listdata.edit.edit-fasilitas-kesehatan', [
             'idedit' => $idedit,
             'data_fk' => $data_fk,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -89,7 +92,8 @@ class DataController extends Controller
         $data_pendidikan = Datapendidikan::all();
         return view('admin.listdata.data-pendidikan', [
             'data_pendidikan' => $data_pendidikan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -99,7 +103,8 @@ class DataController extends Controller
         $data_pendidikan = Datapendidikan::where('jenjang_pendidikan', $jenjangpendidikan)->get();
         return view('admin.listdata.data-pendidikan-filter', [
             'data_pendidikan' => $data_pendidikan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -110,7 +115,8 @@ class DataController extends Controller
         return view('admin.listdata.edit.edit-data-pendidikan', [
             'data_pendidikan' => $data_pendidikan,
             'idpendidikan' => $idpendidikan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -153,7 +159,8 @@ class DataController extends Controller
         $data_kunjungan = Datakunjungan::all();
         return view('admin.listdata.data-kunjungan', [
             'data_kunjungan' => $data_kunjungan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -164,7 +171,8 @@ class DataController extends Controller
         return view('admin.listdata.edit.edit-data-kunjungan', [
             'idkunjungan' => $idkunjungan,
             'data_kunjungan' => $data_kunjungan, 
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -196,7 +204,8 @@ class DataController extends Controller
         $data_idm = Dataindeksdesa::all();
         return view('admin.listdata.data-indeks-desa-membangun', [
             'data_idm' => $data_idm,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -206,7 +215,8 @@ class DataController extends Controller
         $data_idm = Dataindeksdesa::where('namakecamatan', $namakecamatan)->get();
         return view('admin.listdata.data-idm-filter', [
             'data_idm' => $data_idm,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -217,7 +227,8 @@ class DataController extends Controller
         return view('admin.listdata.edit.edit-idm', [
             'data_idm' => $data_idm,
             'ididm' => $ididm,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -250,7 +261,8 @@ class DataController extends Controller
         $produksi_perkebunan = Dataproduksiperkebunan::get();
         return view('admin.listdata.data-produksi-perkebunan', [
             'produksi_perkebunan' => $produksi_perkebunan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -261,7 +273,8 @@ class DataController extends Controller
         return view('admin.listdata.data-produksi-perkebunan-filter', [
             'produksi_perkebunan' => $produksi_perkebunan,
             'tahun' => $produksi_tahun,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -271,7 +284,8 @@ class DataController extends Controller
         $data_perkebunan = Dataproduksiperkebunan::where('id', $idperkebunan)->first();
         return view('admin.listdata.edit.edit-produksi-perkebunan', [
             'data_perkebunan' => $data_perkebunan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -307,7 +321,8 @@ class DataController extends Controller
         $data_ternak = Datapopulasiternak::where('kecamatan', $kecamatan)->get();
         return view('admin.listdata.data-populasi-ternak-filter', [
             'data_ternak' => $data_ternak,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -317,7 +332,8 @@ class DataController extends Controller
         $data_ternak = Datapopulasiternak::all();
         return view('admin.listdata.data-populasi-ternak', [
             'data_ternak' => $data_ternak,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -328,7 +344,8 @@ class DataController extends Controller
         return view('admin.listdata.edit.edit-populasi-ternak', [
             'data_ternak' => $data_ternak,
             'idternak' => $idternak,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -362,7 +379,8 @@ class DataController extends Controller
         $data_capil_jk = Datacapiljk::all();
         return view('admin.listdata.data-capil-jk', [
             'data_capil_jk' => $data_capil_jk,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -372,7 +390,8 @@ class DataController extends Controller
         $capiljk = Datacapiljk::where('id', $idjk)->first();
         return view('admin.listdata.edit.edit-capil-jk', [
             'capiljk' => $capiljk,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -405,7 +424,8 @@ class DataController extends Controller
         $data_capil_kk = Datacapilkk::all();
         return view('admin.listdata.data-capil-kk', [
             'data_capil_kk' => $data_capil_kk,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -415,7 +435,8 @@ class DataController extends Controller
         $data_capil_kk = Datacapilkk::where('id', $idkk)->first();
         return view('admin.listdata.edit.edit-capil-kk', [
             'data_capil_kk' => $data_capil_kk,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -447,7 +468,8 @@ class DataController extends Controller
         $data_capil_mp = Datacapilmp::all();
         return view('admin.listdata.data-capil-mp', [
             'data_capil_mp' => $data_capil_mp,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -457,7 +479,8 @@ class DataController extends Controller
         $data_capil_mp = Datacapilmp::where('id', $idmp)->first();
         return view('admin.listdata.edit.edit-capil-mp', [
             'data_capil_mp' => $data_capil_mp,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -490,7 +513,8 @@ class DataController extends Controller
         $data_perikanan_komodity = Dataperikanankomodity::all();
         return view('admin.listdata.data-perikanan-komodity', [
             'data_perikanan_komodity' => $data_perikanan_komodity,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -500,7 +524,8 @@ class DataController extends Controller
         $perikanan_komodity = Dataperikanankomodity::where('id', $idperikanan)->first();
         return view('admin.listdata.edit.edit-perikanan-komodity', [
             'perikanan' => $perikanan_komodity,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -532,7 +557,8 @@ class DataController extends Controller
         $perikananjenis = Dataperikananjenis::all();
         return view('admin.listdata.data-perikanan-jenis', [
             'perikananjenis' => $perikananjenis,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -542,7 +568,8 @@ class DataController extends Controller
         $perikananjenis = Dataperikananjenis::where('id', $idperikananjenis)->first();
         return view('admin.listdata.edit.edit-perikanan-jenis', [
             'perikananjenis' => $perikananjenis,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -578,7 +605,8 @@ class DataController extends Controller
     {
         $users = session('data_login');
         return view('admin.data.input-data-situs-cagarbudaya', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -602,7 +630,8 @@ class DataController extends Controller
         $cagarbudaya = Datacagarbudaya::all();
         return view('admin.listdata.data-cagar-budaya', [
             'cagarbudaya' => $cagarbudaya,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -612,7 +641,8 @@ class DataController extends Controller
         $cagarbudaya = Datacagarbudaya::where('id', $idcagarbudaya)->first();
         return view('admin.listdata.edit.edit-cagar-budaya', [
             'cagarbudaya' => $cagarbudaya, 
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -642,7 +672,8 @@ class DataController extends Controller
     {
         $users = session('data_login');
         return view('admin.data.input-data-koperasi', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -677,7 +708,8 @@ class DataController extends Controller
         $datakoperasi = Datakoperasi::all();
         return view('admin.listdata.data-koperasi', [
             'datakoperasi' => $datakoperasi,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -687,7 +719,8 @@ class DataController extends Controller
         $datakoperasi = Datakoperasi::where('id', $idkoperasi)->first();
         return view('admin.listdata.edit.edit-koperasi', [
             'datakoperasi' => $datakoperasi, 
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -728,7 +761,8 @@ class DataController extends Controller
     {
         $users = session('data_login');
         return view('admin.data.input-data-luastanam', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -736,7 +770,8 @@ class DataController extends Controller
     {
         $users = session('data_login');
         return view('admin.data.input-data-luastanam2', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -792,7 +827,8 @@ class DataController extends Controller
         $luas_tanamsatu = Luastanamsatu::all();
         return view('admin.listdata.data-luas-tanam-satu', [
             'luas_tanamsatu' => $luas_tanamsatu,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -802,7 +838,8 @@ class DataController extends Controller
         $luas_tanamdua = Luastanamdua::all();
         return view('admin.listdata.data-luas-tanam-dua', [
             'luas_tanamdua' => $luas_tanamdua,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -812,7 +849,8 @@ class DataController extends Controller
         $luastanamsatu = Luastanamsatu::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-satu', [
             'luastanamsatu' => $luastanamsatu,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -822,7 +860,8 @@ class DataController extends Controller
         $luastanamdua = Luastanamdua::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-dua', [
             'luastanamdua' => $luastanamdua, 
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -890,7 +929,8 @@ class DataController extends Controller
     {
         $users = session('data_login');
         return view('admin.data.input-data-perdagangan', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -915,7 +955,8 @@ class DataController extends Controller
         $data_perdagangan = Dataperdagangan::all();
         return view('admin.listdata.data-perdagangan', [
             'data_perdagangan' => $data_perdagangan,
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
@@ -925,7 +966,8 @@ class DataController extends Controller
         $perdagangan = Dataperdagangan::where('id', $idperdagangan)->first();
         return view('admin.listdata.edit.edit-data-perdagangan', [
             'perdagangan' => $perdagangan, 
-            'users' => $users 
+            'users' => $users,
+            'user' => $user 
         ]);
     }
 

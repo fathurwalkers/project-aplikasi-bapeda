@@ -125,6 +125,8 @@
 
                                     <a class="nav-link" href="{{ route('data-luas-tanam-dua') }}">Data Luas Panen</a>
 
+                                    <a class="nav-link" href="{{ route('data-perdagangan') }}">Data Perdagangan</a>
+
                                 </nav>
                             </div>
 
@@ -159,6 +161,8 @@
                                     <a class="nav-link" href="{{ route('input-luas-tanam-satu') }}">Data Luas Tanam</a>
 
                                     <a class="nav-link" href="{{ route('input-luas-tanam-dua') }}">Data Luas Panen</a>
+
+                                    <a class="nav-link" href="{{ route('input-data-perdagangan') }}">Data Perdagangan</a>
 
                                 </nav>
                             </div>
