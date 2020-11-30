@@ -256,19 +256,28 @@ class AdminController extends Controller
 
     public function show()
     {
-        return view('admin.data.index');
+        $users = session('data_login');
+        return view('admin.data.index', [
+            'users' => $users
+        ]);
     }
 
     public function inputdata()
     {
-        return view('admin.data.input');
+        $users = session('data_login');
+        return view('admin.data.input', [
+            'users' => $users
+        ]);
     }
 
 
     // Data Kunjungan 
     public function getdatakunjungan()
     {
-        return view('admin.data.input-data-kunjungan');
+        $users = session('data_login');
+        return view('admin.data.input-data-kunjungan', [
+            'users' => $users
+        ]);
     }
 
     public function postdatakunjungan(Request $request)
@@ -293,7 +302,10 @@ class AdminController extends Controller
     // Data Pendidikan 
     public function getdatapendidikan()
     {
-        return view('admin.data.input-data-pendidikan');
+        $users = session('data_login');
+        return view('admin.data.input-data-pendidikan', [
+            'users' => $users 
+        ]);
     }
 
     public function postdatapendidikan(Request $request)
@@ -330,7 +342,10 @@ class AdminController extends Controller
     // Data Indeks Desa Membangun 
     public function getdatadesamembangun()
     {
-        return view('admin.data.input-data-indeks-desa-membangun');
+        $users = session('data_login');
+        return view('admin.data.input-data-indeks-desa-membangun', [
+            'users' => $users
+        ]);
     }
 
     public function postdatadesamembangun(Request $request)
@@ -358,7 +373,10 @@ class AdminController extends Controller
     // Data Produksi Perkebunan 
     public function getdataproduksiperkebunan()
     {
-        return view('/admin/data/input-data-produksi-perkebunan');
+        $users = session('data_login');
+        return view('/admin/data/input-data-produksi-perkebunan', [
+            'users' => $users
+        ]);
     }
 
     public function postdataproduksiperkebunan(Request $request)
@@ -388,7 +406,10 @@ class AdminController extends Controller
     // Data Capil Total Jumlah Penduduk Berdasarkan Jenis Kelamin 
     public function getdatacapiljk()
     {
-        return view('admin.data.input-data-capil-jk');
+        $users = session('data_login');
+        return view('admin.data.input-data-capil-jk', [
+            'users' => $users
+        ]);
     }
 
     public function postdatacapiljk(Request $request)
@@ -411,7 +432,10 @@ class AdminController extends Controller
     // Data Capil Total Jumlah Penduduk Berdasarkan Kartu Keluarga
     public function getdatacapilkk()
     {
-        return view('admin.data.input-data-capil-kk');
+        $users = session('data_login');
+        return view('admin.data.input-data-capil-kk', [
+            'users' => $users
+        ]);
     }
 
     public function postdatacapilkk(Request $request)
@@ -433,7 +457,10 @@ class AdminController extends Controller
     // Data Populasi Ternak
     public function getdatapopulasiternak()
     {
-        return view('admin.data.input-data-populasi-ternak');
+        $users = session('data_login');
+        return view('admin.data.input-data-populasi-ternak', [
+            'users' => $users
+        ]);
     }
 
     public function postdatapopulasiternak(Request $request)
@@ -458,7 +485,10 @@ class AdminController extends Controller
     // Data Jumlah Total Capil Berdasarkan Mata Pencaharian 
     public function getdatacapilmp()
     {
-        return view('admin.data.input-data-capil-mp');
+        $users = session('data_login');
+        return view('admin.data.input-data-capil-mp', [
+            'users' => $users
+        ]);
     }
 
     public function postdatacapilmp(Request $request)
@@ -481,7 +511,10 @@ class AdminController extends Controller
     // DATA PERIKANAN KOMODITY 
     public function inputperikanankomodity()
     {
-        return view('admin.data.input-data-perikanan-komodity');
+        $users = session('data_login');
+        return view('admin.data.input-data-perikanan-komodity', [
+            'users' => $users
+        ]);
     }
 
     public function postperikanankomodity(Request $request)
@@ -504,7 +537,10 @@ class AdminController extends Controller
     // DATA PERIKANAN JENIS 
     public function input_perikananjenis()
     {
-        return view('admin.data.input-data-perikanan-jenis');
+        $users = session('data_login');
+        return view('admin.data.input-data-perikanan-jenis', [
+            'users' => $users 
+        ]);
     }
 
     public function post_perikananjenis(Request $request)
