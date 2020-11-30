@@ -1,4 +1,8 @@
+@if ($users->level == 'admin')
+@extends('layouts.adminlayout2')
+@else
 @extends('layouts.adminlayout')
+@endif
 
 @section('title', 'Input Data')
 

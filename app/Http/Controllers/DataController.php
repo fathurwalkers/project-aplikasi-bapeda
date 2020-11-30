@@ -31,6 +31,7 @@ class DataController extends Controller
     public function showfasilitaskesehatan($namakecamatan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $namakecamatan = $namakecamatan;
         $data_fasilitas_kesehatan = Datafasilitaskesehatan::where('kecamatan', $namakecamatan)->get();
         return view('admin.listdata.data-fasilitas-kesehatan-filter', [
@@ -44,6 +45,7 @@ class DataController extends Controller
     public function fasilitaskesehatan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $fasilitaskesehatan = Datafasilitaskesehatan::all();
         return view('admin.listdata.data-fasilitas-kesehatan', [
             'fasilitaskesehatan' => $fasilitaskesehatan, 
@@ -62,6 +64,7 @@ class DataController extends Controller
     public function editfasilitaskesehatan(Request $request, $idedit)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_fk = Datafasilitaskesehatan::where('id', $idedit)->first();
         return view('admin.listdata.edit.edit-fasilitas-kesehatan', [
             'idedit' => $idedit,
@@ -89,6 +92,7 @@ class DataController extends Controller
     public function showpendidikan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_pendidikan = Datapendidikan::all();
         return view('admin.listdata.data-pendidikan', [
             'data_pendidikan' => $data_pendidikan,
@@ -100,6 +104,7 @@ class DataController extends Controller
     public function filterpendidikan($jenjangpendidikan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_pendidikan = Datapendidikan::where('jenjang_pendidikan', $jenjangpendidikan)->get();
         return view('admin.listdata.data-pendidikan-filter', [
             'data_pendidikan' => $data_pendidikan,
@@ -111,6 +116,7 @@ class DataController extends Controller
     public function editpendidikan($idpendidikan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_pendidikan = Datapendidikan::where('id', $idpendidikan)->first();
         return view('admin.listdata.edit.edit-data-pendidikan', [
             'data_pendidikan' => $data_pendidikan,
@@ -156,6 +162,7 @@ class DataController extends Controller
     public function showkunjungan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_kunjungan = Datakunjungan::all();
         return view('admin.listdata.data-kunjungan', [
             'data_kunjungan' => $data_kunjungan,
@@ -167,6 +174,7 @@ class DataController extends Controller
     public function editkunjungan($idkunjungan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_kunjungan = Datakunjungan::where('id', $idkunjungan)->first();
         return view('admin.listdata.edit.edit-data-kunjungan', [
             'idkunjungan' => $idkunjungan,
@@ -201,6 +209,7 @@ class DataController extends Controller
     public function showindeksdesamembangun()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_idm = Dataindeksdesa::all();
         return view('admin.listdata.data-indeks-desa-membangun', [
             'data_idm' => $data_idm,
@@ -212,6 +221,7 @@ class DataController extends Controller
     public function filteridm($namakecamatan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_idm = Dataindeksdesa::where('namakecamatan', $namakecamatan)->get();
         return view('admin.listdata.data-idm-filter', [
             'data_idm' => $data_idm,
@@ -223,6 +233,7 @@ class DataController extends Controller
     public function editidm($ididm)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_idm = Dataindeksdesa::where('id', $ididm)->first();
         return view('admin.listdata.edit.edit-idm', [
             'data_idm' => $data_idm,
@@ -258,6 +269,7 @@ class DataController extends Controller
     public function showproduksiperkebunan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $produksi_perkebunan = Dataproduksiperkebunan::get();
         return view('admin.listdata.data-produksi-perkebunan', [
             'produksi_perkebunan' => $produksi_perkebunan,
@@ -269,6 +281,7 @@ class DataController extends Controller
     public function produksiperkebunan($produksi_tahun)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $produksi_perkebunan = Dataproduksiperkebunan::where('produksi_tahun', $produksi_tahun)->get();
         return view('admin.listdata.data-produksi-perkebunan-filter', [
             'produksi_perkebunan' => $produksi_perkebunan,
@@ -281,6 +294,7 @@ class DataController extends Controller
     public function editproduksiperkebunan($idperkebunan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_perkebunan = Dataproduksiperkebunan::where('id', $idperkebunan)->first();
         return view('admin.listdata.edit.edit-produksi-perkebunan', [
             'data_perkebunan' => $data_perkebunan,
@@ -318,6 +332,7 @@ class DataController extends Controller
     public function filterpopulasiternak($kecamatan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_ternak = Datapopulasiternak::where('kecamatan', $kecamatan)->get();
         return view('admin.listdata.data-populasi-ternak-filter', [
             'data_ternak' => $data_ternak,
@@ -329,6 +344,7 @@ class DataController extends Controller
     public function showdatapopulasiternak()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_ternak = Datapopulasiternak::all();
         return view('admin.listdata.data-populasi-ternak', [
             'data_ternak' => $data_ternak,
@@ -340,6 +356,7 @@ class DataController extends Controller
     public function editpopulasiternak($idternak)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_ternak = Datapopulasiternak::where('id', $idternak)->first();
         return view('admin.listdata.edit.edit-populasi-ternak', [
             'data_ternak' => $data_ternak,
@@ -376,6 +393,7 @@ class DataController extends Controller
     public function showdatacapiljk()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_capil_jk = Datacapiljk::all();
         return view('admin.listdata.data-capil-jk', [
             'data_capil_jk' => $data_capil_jk,
@@ -387,6 +405,7 @@ class DataController extends Controller
     public function editcapiljk($idjk)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $capiljk = Datacapiljk::where('id', $idjk)->first();
         return view('admin.listdata.edit.edit-capil-jk', [
             'capiljk' => $capiljk,
@@ -421,6 +440,7 @@ class DataController extends Controller
     public function showdatacapilkk()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_capil_kk = Datacapilkk::all();
         return view('admin.listdata.data-capil-kk', [
             'data_capil_kk' => $data_capil_kk,
@@ -432,6 +452,7 @@ class DataController extends Controller
     public function editcapilkk($idkk)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_capil_kk = Datacapilkk::where('id', $idkk)->first();
         return view('admin.listdata.edit.edit-capil-kk', [
             'data_capil_kk' => $data_capil_kk,
@@ -465,6 +486,7 @@ class DataController extends Controller
     public function showdatacapilmp()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_capil_mp = Datacapilmp::all();
         return view('admin.listdata.data-capil-mp', [
             'data_capil_mp' => $data_capil_mp,
@@ -476,6 +498,7 @@ class DataController extends Controller
     public function editcapilmp($idmp)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_capil_mp = Datacapilmp::where('id', $idmp)->first();
         return view('admin.listdata.edit.edit-capil-mp', [
             'data_capil_mp' => $data_capil_mp,
@@ -510,6 +533,7 @@ class DataController extends Controller
     public function listperikanankomodity()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_perikanan_komodity = Dataperikanankomodity::all();
         return view('admin.listdata.data-perikanan-komodity', [
             'data_perikanan_komodity' => $data_perikanan_komodity,
@@ -521,6 +545,7 @@ class DataController extends Controller
     public function editperikanankomodity($idperikanan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $perikanan_komodity = Dataperikanankomodity::where('id', $idperikanan)->first();
         return view('admin.listdata.edit.edit-perikanan-komodity', [
             'perikanan' => $perikanan_komodity,
@@ -554,6 +579,7 @@ class DataController extends Controller
     public function dataperikananjenis()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $perikananjenis = Dataperikananjenis::all();
         return view('admin.listdata.data-perikanan-jenis', [
             'perikananjenis' => $perikananjenis,
@@ -565,6 +591,7 @@ class DataController extends Controller
     public function edit_perikananjenis($idperikananjenis)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $perikananjenis = Dataperikananjenis::where('id', $idperikananjenis)->first();
         return view('admin.listdata.edit.edit-perikanan-jenis', [
             'perikananjenis' => $perikananjenis,
@@ -604,6 +631,7 @@ class DataController extends Controller
     public function input_cagarbudaya()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         return view('admin.data.input-data-situs-cagarbudaya', [
             'users' => $users,
             'user' => $user
@@ -627,6 +655,7 @@ class DataController extends Controller
     public function data_cagarbudaya()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $cagarbudaya = Datacagarbudaya::all();
         return view('admin.listdata.data-cagar-budaya', [
             'cagarbudaya' => $cagarbudaya,
@@ -638,6 +667,7 @@ class DataController extends Controller
     public function edit_cagarbudaya($idcagarbudaya)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $cagarbudaya = Datacagarbudaya::where('id', $idcagarbudaya)->first();
         return view('admin.listdata.edit.edit-cagar-budaya', [
             'cagarbudaya' => $cagarbudaya, 
@@ -671,6 +701,7 @@ class DataController extends Controller
     public function input_koperasi()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         return view('admin.data.input-data-koperasi', [
             'users' => $users,
             'user' => $user
@@ -705,6 +736,7 @@ class DataController extends Controller
     public function data_koperasi()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $datakoperasi = Datakoperasi::all();
         return view('admin.listdata.data-koperasi', [
             'datakoperasi' => $datakoperasi,
@@ -716,6 +748,7 @@ class DataController extends Controller
     public function edit_koperasi($idkoperasi)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $datakoperasi = Datakoperasi::where('id', $idkoperasi)->first();
         return view('admin.listdata.edit.edit-koperasi', [
             'datakoperasi' => $datakoperasi, 
@@ -760,6 +793,7 @@ class DataController extends Controller
     public function input_luastanamsatu()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         return view('admin.data.input-data-luastanam', [
             'users' => $users,
             'user' => $user
@@ -769,6 +803,7 @@ class DataController extends Controller
     public function input_luastanamdua()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         return view('admin.data.input-data-luastanam2', [
             'users' => $users,
             'user' => $user
@@ -824,6 +859,7 @@ class DataController extends Controller
     public function index_luastanamsatu()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $luas_tanamsatu = Luastanamsatu::all();
         return view('admin.listdata.data-luas-tanam-satu', [
             'luas_tanamsatu' => $luas_tanamsatu,
@@ -835,6 +871,7 @@ class DataController extends Controller
     public function index_luastanamdua()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $luas_tanamdua = Luastanamdua::all();
         return view('admin.listdata.data-luas-tanam-dua', [
             'luas_tanamdua' => $luas_tanamdua,
@@ -846,6 +883,7 @@ class DataController extends Controller
     public function edit_luastanamsatu($idluastanam)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $luastanamsatu = Luastanamsatu::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-satu', [
             'luastanamsatu' => $luastanamsatu,
@@ -857,6 +895,7 @@ class DataController extends Controller
     public function edit_luastanamdua($idluastanam)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $luastanamdua = Luastanamdua::where('id', $idluastanam)->first();
         return view('admin.listdata.edit.edit-luas-tanam-dua', [
             'luastanamdua' => $luastanamdua, 
@@ -928,6 +967,7 @@ class DataController extends Controller
     public function input_perdagangan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         return view('admin.data.input-data-perdagangan', [
             'users' => $users,
             'user' => $user
@@ -952,6 +992,7 @@ class DataController extends Controller
     public function index_perdagangan()
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $data_perdagangan = Dataperdagangan::all();
         return view('admin.listdata.data-perdagangan', [
             'data_perdagangan' => $data_perdagangan,
@@ -963,6 +1004,7 @@ class DataController extends Controller
     public function edit_perdagangan($idperdagangan)
     {
         $users = session('data_login');
+        $user = session('data_login_admin');
         $perdagangan = Dataperdagangan::where('id', $idperdagangan)->first();
         return view('admin.listdata.edit.edit-data-perdagangan', [
             'perdagangan' => $perdagangan, 

@@ -92,8 +92,12 @@ class AdminController extends Controller
         $data_perdagangan = Dataperdagangan::all()->count();
 
         $users = session('data_login_admin');
+        // $user = session('data_login_admin');
+        // dump($users);
+        // dd($user);
         return view('admin.admin', [
             'users' => $users,
+            // 'user' => $user,
             'data_capiljk' => $data_capiljk,
             'data_capilmp' => $data_capilmp,
             'data_capilkk' => $data_capilkk,
@@ -150,7 +154,8 @@ class AdminController extends Controller
             if ($cek_password) {
                 switch ($cek_level) {
                     case "admin":
-                        $users = session(['data_login_admin' => $data_login]);
+                        $users = session(['data_login' => $data_login]);
+                        $user = session(['data_login_admin' => $data_login]);
                         // dd($users);
                         return redirect('/administrator');
                         break;

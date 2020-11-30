@@ -54,10 +54,17 @@
                         <div class="nav">
 
                             {{-- Halaman Dashboard Admin  --}}
+                            @if ($users->level == 'admin')
+                            <a class="nav-link" href="{{ url('/administrator') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Home
+                            </a>
+                            @elseif ($users->level == 'admin')
                             <a class="nav-link" href="{{ url('/admin') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Home
                             </a>
+                            @endif
 
 
                             {{-- Tampilkan Data  --}}

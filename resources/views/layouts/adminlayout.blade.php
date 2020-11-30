@@ -54,10 +54,19 @@
                         <div class="nav">
 
                             {{-- Halaman Dashboard Admin  --}}
+                            @if ($users->level == 'admin')
+                            <a class="nav-link" href="{{ url('/administrator') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Home
+                            </a>
+                            @else
                             <a class="nav-link" href="{{ url('/admin') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Home
                             </a>
+                            @endif
+
+                            
 
 
                             {{-- Tampilkan Data  --}}
@@ -115,6 +124,59 @@
 
                                     @if ($users->level == 'dinas_perdagangan')
                                     <a class="nav-link" href="{{ route('data-perdagangan') }}">Data Perdagangan</a>
+                                    {{-- @endif --}}
+                                    @endif
+
+
+
+                                    {{-- ADMIN  --}}
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-pendidikan') }}">Pendidikan</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-fasilitas-kesehatan') }}">Fasilitas Kesehatan</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-kunjungan') }}">Parawisata</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-produksi-perkebunan') }}">Produk Perkebunan</a>
+                                    <a class="nav-link" href="{{ url('/admin/data/data-populasi-ternak') }}">Data Populasi Ternak</a>
+                                    <a class="nav-link" href="{{ route('data-luas-tanam-satu') }}">Data Luas Tanam</a>
+                                    <a class="nav-link" href="{{ route('data-luas-tanam-dua') }}">Data Luas Panen</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-indeks-desa-membangun') }}">Indeks Desa Membangun</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ route('data-perikanan-komodity') }}">Data Perikanan Tangkap</a>
+                                    <a class="nav-link" href="{{ route('data-perikanan-jenis') }}">Data Perikanan Budidaya</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/data-capil-mp') }}">Data Capil Berdasarkan Mata Pencaharian</a>
+
+                                    <a class="nav-link" href="{{ url('/admin/data/data-capil-kk') }}">Data Capil Berdasarkan Kartu Keluarga</a>
+
+                                    <a class="nav-link" href="{{ url('/admin/data/data-capil-jk') }}">Data Capil Berdasarkan Jenis Kelamin</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ route('data-cagar-budaya') }}">Data Situs Cagar Budaya</a>
+                                    @endif 
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ route('data-koperasi') }}">Data Koperasi</a>
+                                    @endif
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ route('data-perdagangan') }}">Data Perdagangan</a>
+                                    {{-- @endif --}}
                                     @endif
 
                                 </nav>
@@ -172,6 +234,53 @@
                                     @endif
 
                                     @if ($users->level == 'dinas_perdagangan')
+                                    <a class="nav-link" href="{{ route('input-data-perdagangan') }}">Data Perdagangan</a>
+                                    @endif
+
+
+                                    
+
+
+
+                                    @if ($users->level == 'admin')
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-pendidikan') }}">Pendidikan</a>
+                                    
+
+                                    
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-fasilitas-kesehatan') }}">Fasilitas Kesehatan</a>
+                                   
+
+                                    
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-kunjungan') }}">Data Kunjungan</a>
+                                    
+
+                                    
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-produksi-perkebunan') }}">Produk Perkebunan</a>
+                                    <a class="nav-link" href="{{ route('input-luas-tanam-satu') }}">Data Luas Tanam</a>
+                                    <a class="nav-link" href="{{ route('input-luas-tanam-dua') }}">Data Luas Panen</a>
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-populasi-ternak') }}">Data Populasi Ternak</a>
+                                    
+
+                                    
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-indeks-desa-membangun') }}">Indeks Desa Membangun</a>
+                                    
+
+                                    
+                                    <a class="nav-link" href="{{ route('input-perikanan-komodity') }}">Data Perikanan Tangkap</a>
+                                    <a class="nav-link" href="{{ route('input-perikanan-jenis') }}">Data Perikanan Budidaya</a>
+                                    
+
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-capil-mp') }}">Data Capil Berdasarkan Mata Pencaharian</a>
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-capil-kk') }}">Data Capil Berdasarkan Kartu Keluarga</a>
+                                    <a class="nav-link" href="{{ url('/admin/data/input-data-capil-jk') }}">Data Capil Berdasarkan Jenis Kelamin</a>
+                                    
+
+                                    <a class="nav-link" href="{{ route('input-cagar-budaya') }}">Data Situs Cagar Budaya</a>
+                                    
+                                    
+                                    <a class="nav-link" href="{{ route('input-data-koperasi') }}">Data Koperasi</a>
+                                    
+                                    
                                     <a class="nav-link" href="{{ route('input-data-perdagangan') }}">Data Perdagangan</a>
                                     @endif
                         
