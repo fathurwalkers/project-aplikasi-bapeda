@@ -351,14 +351,16 @@
                 </div>
             </div>
 
+            {{-- @if ($users->level == 'dinas_perdagangan') --}}
+            {{-- <div class="row"> --}}
                 <div class="col-xl-3 col-md-6">
-                    <div id="gradient8" class="text-white mb-4">
+                    <div id="gradient7" class="text-white mb-4">
                         <div class="card-header">Data Perdagangan</div>
                         <div class="card-body text-center">
                             <h4>{{ $data_perdagangan }} Data</h4>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{ route('data-cagar-budaya') }}">View Details</a>
+                            <a class="small text-white stretched-link" href="{{ route('data-perdagangan') }}">View Details</a>
                             <div class="small text-white"><svg class="svg-inline--fa fa-angle-right fa-w-8"
                                     aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right"
                                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="">
@@ -370,6 +372,8 @@
                         </div>
                     </div>
                 </div>
+            {{-- </div> --}}
+            {{-- @endif --}}
             
 
         </div>

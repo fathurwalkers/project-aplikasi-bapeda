@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'role-admin' => \App\Http\Middleware\RoleStatus::class,
         'role-dinas-capil' => \App\Http\Middleware\RoleDinasCapil::class,
+        'cekrole' => \App\Http\Middleware\CekRole::class,
     ];
 }

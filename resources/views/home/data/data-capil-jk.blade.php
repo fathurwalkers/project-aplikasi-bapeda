@@ -24,12 +24,8 @@
 
 
             <div class="container mb-5">
-              {{-- <form action="{{ route('print-capiljk') }}" method="POST">
-                @csrf
-                  <button type="submit" class="btn btn-primary">Print PDF</button>
-                </form> --}}
 
-              <a href="{{ route('print-capiljk') }}" class="btn btn-primary">PRINT PDF</a>
+              <a href="{{ route('index-print-capiljk') }}" class="btn btn-primary">PRINT PDF</a>
     
                 <div class="table-responsive mt-4">
                   

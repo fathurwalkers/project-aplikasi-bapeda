@@ -22,6 +22,7 @@ use App\Luastanamdua;
 use App\Luastanamsatu;
 use App\Datacagarbudaya;
 use App\Dataperdagangan;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -48,6 +49,8 @@ class AdminController extends Controller
         $data_perdagangan = Dataperdagangan::all()->count();
 
         $users = session('data_login');
+        // Alert::message('Robots are working!');
+        Alert::success('Success Title', 'Success Message');
         return view('admin.index', [
             'users' => $users,
             'data_capiljk' => $data_capiljk,
@@ -92,6 +95,9 @@ class AdminController extends Controller
         $data_perdagangan = Dataperdagangan::all()->count();
 
         $users = session('data_login_admin');
+        // Alert::message('Robots are working!');
+        Alert::success('Login Berhasil', 'Anda telah Login');
+        // Alert::question('Question Title', 'Question Message');
         // $user = session('data_login_admin');
         // dump($users);
         // dd($user);
@@ -142,6 +148,7 @@ class AdminController extends Controller
     }
     public function logout(Request $request)
     {
+        // Alert::question('Yakin ingin Keluar?');
         $request->session()->flush();
         return redirect('/');
     }
@@ -218,6 +225,7 @@ class AdminController extends Controller
             }
         }
         // dd($data_login);
+        Alert::warning('Warning Title', 'Warning Message');
         return redirect('/admin/login')->with('status_fail', 'Login gagal, username atau password salah')->withInput();
         // echo 'salah';
     }

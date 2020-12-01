@@ -13,6 +13,7 @@
         @yield('after-style')
     </head>
     <body>
+        @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
             <a class="navbar-brand" href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Lambang_Kabupaten_Buton.png/340px-Lambang_Kabupaten_Buton.png" class="img-responsive" width="50px" height="45px"> SIPAPEDA</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
