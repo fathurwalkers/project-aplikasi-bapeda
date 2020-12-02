@@ -99,7 +99,7 @@
                             </li>
                             <li class="drop-down"><a href="#">Dinas Pariwisata</a>
                                         <ul>
-                                            <li><a href="{{ route('home-data-perikanan-jenis') }}">Jumlah Kunjungan</a></li>
+                                            <li><a href="{{ route('home-data-pariwisata') }}">Jumlah Kunjungan</a></li>
                                         </ul> 
                             </li>
                             <li class="drop-down"><a href="#">Dinas Koperasi</a>

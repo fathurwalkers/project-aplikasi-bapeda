@@ -23,7 +23,7 @@
 
 
           <div class="container mb-4">
-
+            <a href="{{ route('index-print-capilmp')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
             <div class="card mt-2">
                 <h5 class="card-header text-white bg-dark">Data Catatan Sipil Menurut Mata Pencaharian</h5>
                 <div class="card-body">

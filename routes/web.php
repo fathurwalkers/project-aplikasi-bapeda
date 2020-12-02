@@ -12,7 +12,7 @@ Route::prefix('/home')->group(function () {
     Route::get('/data-produksi-perkebunan', 'HomeController@data_produksiperkebunan')->name('home-data-produksi-perkebunan');
     Route::get('/data-fasilitas-kesehatan', 'HomeController@data_fasilitaskesehatan');
     Route::get('/data-pendidikan', 'HomeController@data_pendidikan');
-    Route::get('/data-pariwisata', 'HomeController@data_pariwisata');
+    Route::get('/data-pariwisata', 'HomeController@data_pariwisata')->name('home-data-pariwisata');
     Route::get('/data-idm', 'HomeController@data_idm');
     Route::get('/data-koperasi', 'HomeController@data_koperasi')->name('home-data-koperasi');
     Route::get('/data-perikanan-komodity', 'HomeController@data_perikanan_komodity')->name('home-data-perikanan-komodity');
@@ -21,11 +21,27 @@ Route::prefix('/home')->group(function () {
     Route::get('/data-luas-tanam-satu', 'HomeController@data_luastanamsatu')->name('home-data-luas-tanam-satu');
     Route::get('/data-luas-tanam-dua', 'HomeController@data_luastanamdua')->name('home-data-luas-tanam-dua');
     Route::get('/data-perdagangan', 'HomeController@data_perdagangan')->name('home-data-perdagangan');
+ 
 
 
     // PRINT ROUTE 
     Route::get('/index-print-capiljk', 'PdfController@index_capiljk')->name('index-print-capiljk');
-    Route::get('/print-capiljk', 'PdfController@print_capiljk')->name('print-capiljk');
+    // Route::get('/print-capiljk', 'PdfController@print_capiljk')->name('print-capiljk');
+    Route::get('/print-capilkk', 'PdfController@index_capilkk')->name('index-print-capilkk');
+    Route::get('/print-capilmp', 'PdfController@index_capilmp')->name('index-print-capilmp');
+    Route::get('/print-pendidikan', 'PdfController@index_pendidikan')->name('index-print-pendidikan');
+    Route::get('/print-kesehatan', 'PdfController@index_kesehatan')->name('index-print-kesehatan');
+    Route::get('/print-kebudayaan', 'PdfController@index_kebudayaan')->name('index-print-kebudayaan');
+    Route::get('/print-luastanam', 'PdfController@index_luastanam')->name('index-print-luastanam');
+    Route::get('/print-luaspanen', 'PdfController@index_luaspanen')->name('index-print-luaspanen');
+    Route::get('/print-perkebunan', 'PdfController@index_perkebunan')->name('index-print-perkebunan');
+    Route::get('/print-ternak', 'PdfController@index_ternak')->name('index-print-ternak');
+    Route::get('/print-tangkap', 'PdfController@index_tangkap')->name('index-print-tangkap');
+    Route::get('/print-budidaya', 'PdfController@index_budidaya')->name('index-print-budidaya');
+    Route::get('/print-pariwisata', 'PdfController@index_pariwisata')->name('index-print-pariwisata');
+    Route::get('/print-koperasi', 'PdfController@index_koperasi')->name('index-print-koperasi');
+    Route::get('/print-idm', 'PdfController@index_idm')->name('index-print-idm');
+    Route::get('/print-perdagangan', 'PdfController@index_perdagangan')->name('index-print-perdagangan');
 });
 
 

@@ -1,22 +1,6 @@
 @extends('layouts.homelayout')
 @section('title', 'SIPAPEDA Beranda')
 @section('main-content')
-<textarea id=”printing-css” style=”display:none;”>.no-print{display:none}</textarea>
-
-<script type=”text/javascript”>
-//<![CDATA[
-function printDiv(elementId) {
-var a = document.getElementById(‘printing-css’).value;
-var b = document.getElementById(elementId).innerHTML;
-window.frames[“print_frame”].document.title = document.title;
-window.frames[“print_frame”].document.body.innerHTML = ‘<style>’ + a + ‘</style>’ + b;
-window.frames[“print_frame”].window.focus();
-window.frames[“print_frame”].window.print();
-}
-//]]>
-</script>
-<a href=”javascript:printDiv(‘print-out’);”>cetak</a>
-<div id=”print-out”>Pembuatan Report sederhana</div>
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex justify-cntent-center align-items-center">
             <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
@@ -39,7 +23,7 @@ window.frames[“print_frame”].window.print();
 
 
           <div class="container mb-4">
-
+            <a href="{{ route('index-print-pendidikan')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
             <div class="card mt-2">
                 <h5 class="card-header text-white bg-dark">Data Pendidikan</h5>
                 <div class="card-body">

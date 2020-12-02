@@ -23,12 +23,13 @@
 
 
           <div class="container mb-4">
-
+            <a href="{{ route('index-print-luaspanen')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
             <div class="card mt-2">
                 <h5 class="card-header text-white bg-dark">Data Luas Panen</h5>
                 <div class="card-body">
                 
                     <div class="table-responsive py-3"> 
+                      <h6 class="font-italic text-muted">Sumber Data : Dinas Pertanian</h6>
                         <table class="table table-bordered table-hover">
                           <thead class="thead-dark text-center">
                             <tr>

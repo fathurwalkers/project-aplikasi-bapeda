@@ -23,6 +23,7 @@
 
 
           <div class="container mb-4">
+            <a href="{{ route('index-print-idm')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
             <div class="card mt-2">
                 <h5 class="card-header text-white bg-dark">Data Index Desa Membangun</h5>
                 <div class="card-body">

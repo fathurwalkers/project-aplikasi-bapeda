@@ -23,8 +23,9 @@
 
 
           <div class="container mb-4">
-
+            <a href="{{ route('index-print-capilkk')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
             <div class="card mt-2">
+              
                 <h5 class="card-header text-white bg-dark">Data Capil Berdasarkan KK</h5>
                 <div class="card-body">
                   
