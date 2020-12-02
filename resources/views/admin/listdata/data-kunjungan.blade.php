@@ -11,7 +11,9 @@
 <div class="container">
 
     <div class="card mt-2">
-        <h5 class="card-header text-white bg-dark">Data Kunjungan</h5>
+        <h5 class="card-header text-white bg-dark">
+            <a class="d-inline-flex btn btn-success float-right" href="{{ route('index-print-pariwisata') }}">PRINT DATA</a>
+            Data Kunjungan</h5>
         <div class="card-body">
         
             <div class="table-responsive py-3"> 

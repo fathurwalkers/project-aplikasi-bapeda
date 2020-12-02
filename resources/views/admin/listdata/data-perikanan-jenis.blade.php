@@ -11,7 +11,9 @@
 <div class="container">
 
     <div class="card mt-2">
-        <h5 class="card-header text-white bg-dark">Data Perikanan Budidaya</h5>
+        <h5 class="card-header text-white bg-dark">
+            <a class="d-inline-flex btn btn-success float-right" href="{{ route('index-print-budidaya') }}">PRINT DATA</a>
+            Data Perikanan Budidaya</h5>
         <div class="card-body">
 
             <div class="table-responsive py-3">
