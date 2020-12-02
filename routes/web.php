@@ -26,7 +26,6 @@ Route::prefix('/home')->group(function () {
 
     // PRINT ROUTE 
     Route::get('/index-print-capiljk', 'PdfController@index_capiljk')->name('index-print-capiljk');
-    // Route::get('/print-capiljk', 'PdfController@print_capiljk')->name('print-capiljk');
     Route::get('/print-capilkk', 'PdfController@index_capilkk')->name('index-print-capilkk');
     Route::get('/print-capilmp', 'PdfController@index_capilmp')->name('index-print-capilmp');
     Route::get('/print-pendidikan', 'PdfController@index_pendidikan')->name('index-print-pendidikan');
