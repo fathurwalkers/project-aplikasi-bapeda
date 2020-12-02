@@ -25,7 +25,7 @@
 
             <div class="container mb-5">
 
-              <a href="{{ route('index-print-capiljk') }}" class="btn btn-primary">PRINT PDF</a>
+              <a href="{{ route('index-print-capiljk')}}" class="btn btn-primary" target="_BLANK">PRINT PDF</a>
     
                 <div class="table-responsive mt-4">
                   
